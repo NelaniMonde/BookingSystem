@@ -6,6 +6,7 @@ namespace InternalBookingSystem.Models
     public class Resource
     {
         [Key]
+        [Required]
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -18,5 +19,7 @@ namespace InternalBookingSystem.Models
 
         [DisplayName("Is Available")]
         public bool IsAvailable { get; set; }
+
+        public  ICollection<Booking> BookingsList { get; set; }    
     }
 }

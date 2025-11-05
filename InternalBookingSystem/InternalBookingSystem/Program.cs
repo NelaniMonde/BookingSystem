@@ -1,7 +1,30 @@
+using InternalBookingSystem.Data;
+//using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+//Another one
+builder.Services.AddControllersWithViews();
+
+//Configuring Razor Pages
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+//Configuring Data Context Service
+builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.
+    GetConnectionString("DefaultConnection")));
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+
+//Adding razor pages services on the application
+builder.Services.AddRazorPages();
+
+
+ 
 
 var app = builder.Build();
 
