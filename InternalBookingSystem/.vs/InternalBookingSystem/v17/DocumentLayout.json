@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|c:\\users\\monde real\\documents\\github\\bookingsystem\\internalbookingsystem\\internalbookingsystem\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|solutionrelative:internalbookingsystem\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|c:\\users\\monde real\\documents\\github\\bookingsystem\\internalbookingsystem\\internalbookingsystem\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|solutionrelative:internalbookingsystem\\areas\\identity\\pages\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|c:\\users\\monde real\\documents\\github\\bookingsystem\\internalbookingsystem\\internalbookingsystem\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|solutionrelative:internalbookingsystem\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|c:\\users\\monde real\\documents\\github\\bookingsystem\\internalbookingsystem\\internalbookingsystem\\models\\sd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|solutionrelative:internalbookingsystem\\models\\sd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|c:\\users\\monde real\\documents\\github\\bookingsystem\\internalbookingsystem\\internalbookingsystem\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|solutionrelative:internalbookingsystem\\areas\\identity\\pages\\account\\register.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|c:\\users\\monde real\\documents\\github\\bookingsystem\\internalbookingsystem\\internalbookingsystem\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,6 +21,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|c:\\users\\monde real\\documents\\github\\bookingsystem\\internalbookingsystem\\internalbookingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|solutionrelative:internalbookingsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|c:\\users\\monde real\\documents\\github\\bookingsystem\\internalbookingsystem\\internalbookingsystem\\models\\sd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|solutionrelative:internalbookingsystem\\models\\sd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|c:\\users\\monde real\\documents\\github\\bookingsystem\\internalbookingsystem\\internalbookingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{971F66F1-EB7C-4F7F-A8F8-D0A2254CBF8F}|InternalBookingSystem\\InternalBookingSystem.csproj|solutionrelative:internalbookingsystem\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,34 +37,9 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 213,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 566,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ApplicationUser.cs",
-              "DocumentMoniker": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Models\\ApplicationUser.cs",
-              "RelativeDocumentMoniker": "InternalBookingSystem\\Models\\ApplicationUser.cs",
-              "ToolTip": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Models\\ApplicationUser.cs",
-              "RelativeToolTip": "InternalBookingSystem\\Models\\ApplicationUser.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:45:33.673Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Register.cshtml.cs",
-              "DocumentMoniker": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeDocumentMoniker": "InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ToolTip": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "RelativeToolTip": "InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
-              "ViewState": "AgIAALYAAAAAAAAAAADwv88AAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T13:09:09.421Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -65,13 +48,13 @@
               "RelativeDocumentMoniker": "InternalBookingSystem\\Data\\ApplicationDbContext.cs",
               "ToolTip": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Data\\ApplicationDbContext.cs",
               "RelativeToolTip": "InternalBookingSystem\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T10:09:13.192Z"
+              "WhenOpened": "2025-11-13T13:16:58.647Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "SD.cs",
               "DocumentMoniker": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Models\\SD.cs",
               "RelativeDocumentMoniker": "InternalBookingSystem\\Models\\SD.cs",
@@ -79,7 +62,20 @@
               "RelativeToolTip": "InternalBookingSystem\\Models\\SD.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T09:29:59.3Z"
+              "WhenOpened": "2025-11-13T11:40:32.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "RelativeToolTip": "InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-13T11:27:20.602Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -89,9 +85,52 @@
               "RelativeDocumentMoniker": "InternalBookingSystem\\Program.cs",
               "ToolTip": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Program.cs",
               "RelativeToolTip": "InternalBookingSystem\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T14:57:08.834Z"
+              "WhenOpened": "2025-11-13T11:19:56.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "InternalBookingSystem\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "InternalBookingSystem\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-13T11:17:22.625Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 880,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "InternalBookingSystem\\Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "InternalBookingSystem\\Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T13:52:39.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Register.cshtml.cs",
+              "DocumentMoniker": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeDocumentMoniker": "InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ToolTip": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "RelativeToolTip": "InternalBookingSystem\\Areas\\Identity\\Pages\\Account\\Register.cshtml.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAuwKwAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T11:30:52.515Z"
             }
           ]
         }

@@ -10,6 +10,8 @@ namespace InternalBookingSystem.Data
         {
 
         }
+        public DbSet<UserActivityLog> UserActivityLogs { get; set; }
+
         public DbSet<Resource> Resources {  get; set; }
 
         public DbSet<Booking>Bookings { get; set; } 

@@ -12,7 +12,7 @@ namespace InternalBookingSystem.Models
 
         public string? EmployeeNumber { get; set; }
 
-        public string? PhoneNumber { get; set; }
+        public  string? EmplyeePhoneNumber { get; set; }
 
         public string? Email { get; set; }
     }

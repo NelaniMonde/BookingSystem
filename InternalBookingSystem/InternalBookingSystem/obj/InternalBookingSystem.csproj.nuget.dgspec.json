@@ -65,7 +65,7 @@
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.10, )"
             },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",

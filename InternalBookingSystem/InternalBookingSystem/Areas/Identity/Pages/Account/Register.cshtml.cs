@@ -107,8 +107,23 @@ namespace InternalBookingSystem.Areas.Identity.Pages.Account
 
             public string? Role { get; set; }
 
+
+            /// <summary>
+            /// This the position field added by Me
+            /// </summary>
+
+
+            //public ApplicationUser userExtra { get; set; }
+
             [ValidateNever]
             public IEnumerable<SelectListItem> RoleList { get; set; }
+
+
+            public string Position { get; set; }
+
+            public string EmployeeNumber { get; set; }
+
+            public string PhoneNumber { get; set; }
         }
 
 
@@ -131,7 +146,9 @@ namespace InternalBookingSystem.Areas.Identity.Pages.Account
                 {
                     Text = i,
                     Value = i
-                })
+                }),
+
+                
             };
 
 
@@ -149,7 +166,15 @@ namespace InternalBookingSystem.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-                var result = await _userManager.CreateAsync(user, Input.Password);
+               
+                //Including the extra columns from the UserApplication Class
+                user. Position         =Input.Position  ;
+                 user. EmployeeNumber   =Input. EmployeeNumber ;
+                user.EmplyeePhoneNumber = ""+ Input. PhoneNumber ;
+
+
+        var result = await _userManager.CreateAsync(user, Input.Password);
+            
 
                 if (result.Succeeded)
                 {
@@ -200,7 +225,7 @@ namespace InternalBookingSystem.Areas.Identity.Pages.Account
             return Page();
         }
 
-        private IdentityUser CreateUser()
+        private ApplicationUser CreateUser()
         {
             try
             {

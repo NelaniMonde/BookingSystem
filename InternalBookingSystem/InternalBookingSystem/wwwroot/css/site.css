@@ -20,3 +20,26 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+/** Glass styling class Start**/
+.glassBackground {
+    block-size: fit-content;
+    background: rgba(255, 255, 255, 0.2); /* Transparent white */
+    backdrop-filter: blur(10px); /* Frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 15px;
+    padding: 5.5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.GlassBackGround {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 5px;
+    padding: 0.1px 7.2px;
+    margin: 2px;
+    display: inline-block;
+}
+/** Glass styling class End**/

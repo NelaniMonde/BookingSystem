@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "b/fQTFk3ov8=",
+  "dgSpecHash": "4lgBPomjdGI=",
   "success": true,
   "projectFilePath": "C:\\Users\\Monde Real\\Documents\\GitHub\\BookingSystem\\InternalBookingSystem\\InternalBookingSystem\\InternalBookingSystem.csproj",
   "expectedPackageFiles": [
@@ -68,7 +68,7 @@
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\9.0.10\\microsoft.aspnetcore.cryptography.internal.9.0.10.nupkg.sha512",
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\9.0.10\\microsoft.aspnetcore.cryptography.keyderivation.9.0.10.nupkg.sha512",
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\9.0.10\\microsoft.aspnetcore.identity.entityframeworkcore.9.0.10.nupkg.sha512",
-    "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\9.0.0\\microsoft.aspnetcore.identity.ui.9.0.0.nupkg.sha512",
+    "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\9.0.10\\microsoft.aspnetcore.identity.ui.9.0.10.nupkg.sha512",
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.aspnetcore.metadata\\9.0.10\\microsoft.aspnetcore.metadata.9.0.10.nupkg.sha512",
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\9.0.10\\microsoft.aspnetcore.mvc.razor.runtimecompilation.9.0.10.nupkg.sha512",
@@ -110,8 +110,8 @@
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\9.0.10\\microsoft.extensions.dependencyinjection.9.0.10.nupkg.sha512",
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.10\\microsoft.extensions.dependencyinjection.abstractions.9.0.10.nupkg.sha512",
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.extensions.dependencymodel\\9.0.10\\microsoft.extensions.dependencymodel.9.0.10.nupkg.sha512",
-    "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.0\\microsoft.extensions.fileproviders.abstractions.9.0.0.nupkg.sha512",
-    "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.extensions.fileproviders.embedded\\9.0.0\\microsoft.extensions.fileproviders.embedded.9.0.0.nupkg.sha512",
+    "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\9.0.10\\microsoft.extensions.fileproviders.abstractions.9.0.10.nupkg.sha512",
+    "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.extensions.fileproviders.embedded\\9.0.10\\microsoft.extensions.fileproviders.embedded.9.0.10.nupkg.sha512",
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.extensions.identity.core\\9.0.10\\microsoft.extensions.identity.core.9.0.10.nupkg.sha512",
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.extensions.identity.stores\\9.0.10\\microsoft.extensions.identity.stores.9.0.10.nupkg.sha512",
     "C:\\Users\\Monde Real\\.nuget\\packages\\microsoft.extensions.logging\\9.0.10\\microsoft.extensions.logging.9.0.10.nupkg.sha512",
