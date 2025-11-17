@@ -18,7 +18,12 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url("/Images/main_background.jpg");
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-repeat: no-repeat; /* Prevents image repetition */
+    background-attachment: fixed; /* Keeps the background image fixed during scroll */
+    background-position: center center; /* Centers the image */
 }
 
 
@@ -43,3 +48,5 @@ body {
     display: inline-block;
 }
 /** Glass styling class End**/
+
+

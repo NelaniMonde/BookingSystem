@@ -1,0 +1,69 @@
+﻿@model Booking
+
+<form method="post" asp-controller="Loan" asp-action="GetLoaner">
+    <div class="border p-3 mt-4 glassBackground">
+        <div class="row pb-2">
+            <h2 class="text-black"> Welcome to the Equipment Booking Page</h2>
+            <h3 class="text-black-50">Hi there. I am Booker, Your Internal Booking Assistant :D</h3>
+            <hr />
+        </div>
+
+
+
+        <div class="mb-3">
+            @if (Model == null)
+            {
+                <!--Listing All Available Equipment Start-->
+                @* <div class="mb-3">
+                    <label class="text-black">Available Equipment</label>
+                    <input id="nameInput" asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div> *@
+                <!--Listing All Available Equipment End-->
+
+                <!--Start Time Start-->
+                <div class="mb-3">
+                    <label class="text-black">Please select start date</label>
+                    <input id="startTime" asp-for="StartTime" class="form-control" />
+                    <span asp-validation-for="StartTime" class="text-danger"></span>
+                </div>
+                <!--Start Time End-->
+
+                <!--End Time Start-->
+                <div class="mb-3">
+                    <label class="text-black">Please select end date:</label>
+                    <input asp-for="EndTime" class="form-control" />
+                    <span asp-validation-for="EndTime" class="text-danger"></span>
+                </div>
+                <!--End Time End-->
+
+                <!--Booked By Start-->
+                <div class="mb-3">
+                    <label class="text-black">Booked by: </label>
+                    <input asp-for="BookedBy" class="form-control" />
+                    <span asp-validation-for="BookedBy" class="text-danger"></span>
+                </div>
+                <!--Booked By End-->
+
+                <!--Purpose Start-->
+                <div class="mb-3">
+                    <label class="text-black">Purpose for booking: </label>
+                    <input asp-for="Purpose" class="form-control" />
+                    <span asp-validation-for="Purpose" class="text-danger"></span>
+                </div>
+                <!--Purpose End-->
+            }
+
+            <button type="submit" class="btn btn-primary glassBackground text-black-50" style="width:150px">Create Booking</button>
+
+            <a asp-controller="Loan" asp-action="LoanView" class="btn btn-secondary glassBackground text-black-50" style="width:150px">Back </a>
+        </div>
+    </div>
+</form>
+@section Scripts
+{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+}

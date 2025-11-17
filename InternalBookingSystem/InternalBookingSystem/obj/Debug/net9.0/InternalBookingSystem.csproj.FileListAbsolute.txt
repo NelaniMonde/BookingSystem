@@ -338,6 +338,8 @@ C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\Interna
 C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\bin\Debug\net9.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\bin\Debug\net9.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
@@ -729,6 +731,4 @@ C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\Interna
 C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\obj\Debug\net9.0\InternalBookingSystem.pdb
 C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\obj\Debug\net9.0\InternalBookingSystem.genruntimeconfig.cache
 C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\obj\Debug\net9.0\ref\InternalBookingSystem.dll
-C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\bin\Debug\net9.0\Microsoft.Extensions.FileProviders.Embedded.dll
-C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\obj\Debug\net9.0\compressed\3hoetaai7j-coiqtbk3l7.gz
+C:\Users\Monde Real\Documents\GitHub\BookingSystem\InternalBookingSystem\InternalBookingSystem\obj\Debug\net9.0\compressed\3hoetaai7j-rejleyu80y.gz

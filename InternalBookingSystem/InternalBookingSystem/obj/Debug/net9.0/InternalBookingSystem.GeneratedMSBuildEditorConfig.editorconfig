@@ -188,6 +188,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Monde Real/Documents/GitHub/BookingSystem/InternalBookingSystem/InternalBookingSystem/Views/Booking/AddResource.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xBZGRSZXNvdXJjZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Monde Real/Documents/GitHub/BookingSystem/InternalBookingSystem/InternalBookingSystem/Views/Booking/BookingView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xCb29raW5nVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Monde Real/Documents/GitHub/BookingSystem/InternalBookingSystem/InternalBookingSystem/Views/Booking/DeleteResource.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xEZWxldGVSZXNvdXJjZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Monde Real/Documents/GitHub/BookingSystem/InternalBookingSystem/InternalBookingSystem/Views/Booking/EditResource.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xFZGl0UmVzb3VyY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Monde Real/Documents/GitHub/BookingSystem/InternalBookingSystem/InternalBookingSystem/Views/Booking/ViewResources.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va2luZ1xWaWV3UmVzb3VyY2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Monde Real/Documents/GitHub/BookingSystem/InternalBookingSystem/InternalBookingSystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

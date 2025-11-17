@@ -1,0 +1,77 @@
+﻿@model Resource
+
+<form method="post" asp-controller="Booking" asp-action="AddResource">
+    <div class="border p-3 mt-4 glassBackground">
+        <div class="row pb-2">
+            <h2 class="text-black"> Welcome to the Equipment Adding Page</h2>
+            <h3 class="text-black-50">Hi there. I am Booker, Your Internal Booking Assistant :D</h3>
+            <hr />
+        </div>
+
+
+
+        <div class="mb-3">
+            @if (Model == null)
+            {
+                <!--Name Start-->
+                <div class="mb-3">
+                    <label class="text-black">Please Enter the Equipment Name</label>
+                    <input id="Name" asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <!--Name End-->
+
+                <!--Description Start-->
+                <div class="mb-3">
+                    <label class="text-black">Please Enter the Equipment Description:</label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <!--Description End-->
+
+                <!--Location Start-->
+                <div class="mb-3">
+                    <label class="text-black">Location: </label>
+                    <input asp-for="Location" class="form-control" />
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                </div>
+                <!--Location End-->
+
+                <!--Capacity Start-->
+                <div class="mb-3">
+                    <label class="text-black">Enter Equipemnt Capacity: </label>
+                    <input asp-for="Capacity" class="form-control" />
+                    <span asp-validation-for="Capacity" class="text-danger"></span>
+                </div>
+                <!--Capacity End-->
+                
+
+                <!--We must add check box-->
+                <!-- Availability Start-->
+                <div class="mb-3">
+                    <label class="text-black">Select Equipment Availability: </label>
+                    <div class="glassBackground" style="width:180px">
+                        <div class="form-check form-switch" style="width:160px" >
+                 <input class="form-check-input" style="width:50px; height:25px; margin-top:-0.4px;"
+                                   type="checkbox" role="switch" id="isAvailable"  />
+                            <label style="margin-left:15px;" name="availability" for="isAvailable">Not Available</label>
+                    </div>
+                    </div>
+                </div>
+                <!-- Availability End-->
+            }
+
+            <button type="submit" class="btn btn-primary glassBackground text-black-50" style="width:150px">Create Equipment</button>
+
+            <a asp-controller="Home" asp-action="Index" class="btn btn-secondary glassBackground text-black-50" style="width:150px">Back </a>
+        </div>
+    </div>
+</form>
+@section Scripts
+{
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+}
