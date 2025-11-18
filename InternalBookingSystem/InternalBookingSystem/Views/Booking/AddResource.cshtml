@@ -1,7 +1,7 @@
 ﻿@model Resource
 
-<form method="post" asp-controller="Booking" asp-action="AddResource">
-    <div class="border p-3 mt-4 glassBackground">
+<form method="post" asp-controller="Booking" asp-action="AddResource" class="formAlignment" >
+    <div class="border p-3 mt-4 glassBackground formSizing"  >
         <div class="row pb-2">
             <h2 class="text-black"> Welcome to the Equipment Adding Page</h2>
             <h3 class="text-black-50">Hi there. I am Booker, Your Internal Booking Assistant :D</h3>
@@ -53,8 +53,8 @@
                     <div class="glassBackground" style="width:180px">
                         <div class="form-check form-switch" style="width:160px" >
                  <input class="form-check-input" style="width:50px; height:25px; margin-top:-0.4px;"
-                                   type="checkbox" role="switch" id="isAvailable"  />
-                            <label style="margin-left:15px;" name="availability" for="isAvailable">Not Available</label>
+                      onclick="onChecked(this)"             name="availability" type="checkbox" role="switch" id="isAvailable" >
+                            <label style="margin-left:15px;" id="displayAvailability" for="isAvailable">Not Available</label>
                     </div>
                     </div>
                 </div>
@@ -69,6 +69,23 @@
 </form>
 @section Scripts
 {
+     
+    <script>
+        function onChecked(checkbox)
+        {
+            
+
+
+            if(checkbox.checked)
+            {
+                document.getElementById("displayAvailability").textContent='Available';
+            }
+            else
+            {
+                document.getElementById("displayAvailability").textContent='Not Available';
+            }
+        }
+    </script>
 
     @{
         <partial name="_ValidationScriptsPartial" />

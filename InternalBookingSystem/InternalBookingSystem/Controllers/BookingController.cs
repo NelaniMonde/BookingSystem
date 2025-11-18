@@ -20,10 +20,7 @@ namespace InternalBookingSystem.Controllers
 
 
 
-        public IActionResult BookingView()
-        {
-            return View();
-        }
+      
 
 
         public IActionResult AddResource()
@@ -34,6 +31,18 @@ namespace InternalBookingSystem.Controllers
         [HttpPost]
         public IActionResult AddResource(Resource resource, string availability)
         {
+            /*so if availability is set to on then set the isAvailable to true
+             and if availability is set to null then set it to false
+             */
+
+            if(availability=="on")
+            {
+                resource.IsAvailable = true;    
+            }
+            
+
+            _context.Resources.Add(resource);   
+            _context.SaveChanges();
             return View();
         }
 
@@ -52,5 +61,32 @@ namespace InternalBookingSystem.Controllers
         {
             return View();
         }
+
+
+        public IActionResult BookingView()
+        {
+            var resourcesList = _context.Resources.ToList();
+            var resourceNames = new List<string>();
+
+            foreach (var item in resourcesList)
+            {
+                resourceNames.Add(item.Name);
+            }
+
+            ViewBag.ResourceNameList=resourceNames;
+
+            return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult BookingView(Booking booking,string resourceName)
+        {
+            var resourcesList = _context.Resources.Find(resourceName);
+            return View();
+        }
+
+
+
     }
 }

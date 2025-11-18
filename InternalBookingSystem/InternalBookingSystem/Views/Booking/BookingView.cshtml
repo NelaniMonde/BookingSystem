@@ -1,7 +1,7 @@
 ﻿@model Booking
 
-<form method="post" asp-controller="Loan" asp-action="GetLoaner">
-    <div class="border p-3 mt-4 glassBackground">
+<form method="post" asp-controller="Booking" asp-action="BookingView" class="formAlignment">
+    <div class="border p-3 mt-4 glassBackground formSizing">
         <div class="row pb-2">
             <h2 class="text-black"> Welcome to the Equipment Booking Page</h2>
             <h3 class="text-black-50">Hi there. I am Booker, Your Internal Booking Assistant :D</h3>
@@ -14,11 +14,17 @@
             @if (Model == null)
             {
                 <!--Listing All Available Equipment Start-->
-                @* <div class="mb-3">
+                <div class="mb-3">
                     <label class="text-black">Available Equipment</label>
-                    <input id="nameInput" asp-for="Name" class="form-control" />
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div> *@
+                    <select id="nameInput" name="resourceName" class="form-control glassBackground" style="width:200px;">
+                        <option class="glassBackground" value="" disabled>Select Resource </option>
+                        @foreach (var item in ViewBag.ResourceNameList)
+                        {
+                            <option class="glassBackground" value="@item">@item</option>
+                        }
+                    </select>
+                    
+                </div>
                 <!--Listing All Available Equipment End-->
 
                 <!--Start Time Start-->
