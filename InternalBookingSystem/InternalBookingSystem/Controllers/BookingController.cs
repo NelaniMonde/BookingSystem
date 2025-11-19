@@ -82,8 +82,17 @@ namespace InternalBookingSystem.Controllers
         [HttpPost]
         public IActionResult BookingView(Booking booking,string resourceName)
         {
-            var resourcesList = _context.Resources.Find(resourceName);
-            return View();
+            var resourcesList = _context.Resources.Where(rs => rs .Name == resourceName).ToList();
+
+            booking.ResourcedId = resourcesList[0].Id;
+
+            _context.Bookings.Add(booking);
+
+            _context.SaveChanges();
+
+            
+
+            return RedirectToAction("BookingView");
         }
 
 
