@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/InternalBookingSystem.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.3.5/css/dataTables.dataTables.css" />
+
+    
+
 </head>
 <body>
     <header>
@@ -19,15 +23,19 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
+                        
+                        @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="AddResource">Create Resource</a>
-                        </li>
+                        </li> *@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="BookingView">Make Equipment</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="BookingView">Book Equipment</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewResources">View Equipment</a>
+                        </li>
+
+                        
                     </ul>
 
                     <partial name="_LoginPartial" />
@@ -49,6 +57,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.datatables.net/2.3.5/js/dataTables.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

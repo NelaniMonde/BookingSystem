@@ -27,8 +27,9 @@ body {
 }
 
 
-/** Glass styling class Start**/
-.glassBackground {
+
+    /** Glass styling class Start**/
+    .glassBackground {
     block-size: fit-content;
     background: rgba(255, 255, 255, 0.2); /* Transparent white */
     backdrop-filter: blur(10px); /* Frosted glass effect */
@@ -62,18 +63,5 @@ body {
   width:590px;
 }
 /** form alignment and sizing end **/
-
-
-/** Editing Look of dropdown list items start **/
-/*setect option {
-    block-size: fit-content;
-    background: rgba(255, 255, 255, 0.2);*/ /* Transparent white */
-    /*backdrop-filter: blur(10px);*/ /* Frosted glass effect */
-    /*-webkit-backdrop-filter: blur(10px);*/ /* Safari support */
-    /*border-radius: 15px;
-    padding: 5.5px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}*/
-/** Editing Look of dropdown list items end **/
 
 

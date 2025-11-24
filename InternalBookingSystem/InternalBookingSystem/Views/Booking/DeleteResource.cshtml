@@ -1,5 +1,112 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Resource
 @{
+    var availabilityVar = Model.IsAvailable;
+}
+<form method="post" asp-controller="Booking" asp-action="DeleteResource" class="formAlignment">
+    <div class="border p-3 mt-4 glassBackground formSizing">
+        <div class="row pb-2">
+            <h2 class="text-black"> Welcome to the Equipment Delete Page</h2>
+            <h3 class="text-black-50">Hi there. I am Booker, Your Internal Booking Assistant :D</h3>
+            <hr />
+        </div>
+
+
+
+        <div class="mb-3">
+            @if (Model != null)
+            {
+                <!--ResourceID Start-->
+                <div class="mb-3" hidden>
+                    <label class="text-black">Resource Id</label>
+                    <input name="resourceId" asp-for="Id" class="form-control" value="@Model.Id" />
+                    @* <span asp-validation-for="Name" class="text-danger"></span> *@
+                </div>
+                <!--ResourceID End-->
+
+                <!--Name Start-->
+                <div class="mb-3">
+                    <label class="text-black">Equipment Name</label>
+                    <input id="Name" asp-for="Name" class="form-control"  value="@Model.Name" disabled/>
+                    @* <span asp-validation-for="Name" class="text-danger"></span> *@
+                </div>
+                <!--Name End-->
+                <!--Description Start-->
+                <div class="mb-3">
+                    <label class="text-black">Equipment Description:</label>
+                    <input asp-for="Description" class="form-control" value="@Model.Description" disabled/>
+                    @* <span asp-validation-for="Description" class="text-danger"></span> *@
+                </div>
+                <!--Description End-->
+                <!--Location Start-->
+                <div class="mb-3">
+                    <label class="text-black">Location: </label>
+                    <input asp-for="Location" class="form-control" value="@Model.Location" disabled/>
+                    @* <span asp-validation-for="Location" class="text-danger"></span> *@
+                </div>
+                <!--Location End-->
+                <!--Capacity Start-->
+                <div class="mb-3">
+                    <label class="text-black">Equipemnt Capacity: </label>
+                    <input asp-for="Capacity" class="form-control" value="@Model.Capacity" disabled/>
+                    @* <span asp-validation-for="Capacity" class="text-danger"></span> *@
+                </div>
+                <!--Capacity End-->
+                <!--We must add check box-->
+                <!-- Availability Start-->
+                <div class="mb-3">
+                    <label class="text-black">Equipment Availability: </label>
+                    <div class="glassBackground" style="width:180px">
+                        <div class="form-check form-switch" style="width:160px">
+                            @if (availabilityVar == true)
+                            {
+                                <input class="form-check-input" style="width:50px; height:25px; margin-top:-0.4px;"
+                                name="availability" type="checkbox" role="switch" id="isAvailable" checked disabled>
+                                <label style="margin-left:15px;" id="displayAvailability" for="isAvailable"> Available</label>
+                            }
+                            else
+                            {
+                                <input class="form-check-input" style="width:50px; height:25px; margin-top:-0.4px;"
+                                name="availability" type="checkbox" role="switch" id="isAvailable" disabled>
+                                <label style="margin-left:15px;" id="displayAvailability" for="isAvailable">Not Available</label>
+                            } 
+                        </div>
+                    </div>
+                </div>
+                <!-- Availability End-->
+
+
+                <button type="submit" class="btn btn-primary glassBackground text-black-50" style="width:150px">Delete Equipment</button>
+
+                <a asp-controller="Booking" asp-action="ViewResources" class="btn btn-secondary glassBackground text-black-50" style="width:150px">Back </a>
+            }
+        </div>
+
+    </div>
+</form>
+@section Scripts
+{
+
+    <script>
+       //  $(document).ready( function ()
+       // {
+           
+
+       //     if( @availabilityVar === true)
+       //     {
+       //           document.getElementById("isAvailable").checked=true;
+       //           document.getElementById("displayAvailability").textContent='Available';
+       //     }
+       //     else
+       //     {
+       //           document.getElementById("isAvailable").checked=false;
+       //           document.getElementById("displayAvailability").textContent='Not Available';
+       //     }
+       // });
+
+    </script>
+
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+
 }

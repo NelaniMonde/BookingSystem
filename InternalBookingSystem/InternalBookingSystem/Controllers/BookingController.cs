@@ -19,10 +19,17 @@ namespace InternalBookingSystem.Controllers
         }
 
 
+        /* view resource event start */
+        public IActionResult ViewResources()
+        {
+            var equipmentList = _context.Resources.ToList();
 
-      
+            return View(equipmentList);
+        }
+        /* view resource event end */
 
-
+        
+        /* Add resource event start */
         public IActionResult AddResource()
         {
             return View();
@@ -43,36 +50,88 @@ namespace InternalBookingSystem.Controllers
 
             _context.Resources.Add(resource);   
             _context.SaveChanges();
-            return View();
+            return RedirectToAction("AddResource");
         }
+        /* Add resource event end */
 
-        public IActionResult EditResource()
-        {
-            return View();
-        }
-
-
-        public IActionResult DeleteResource() 
-        {
-            return View();
-        }
         
-        public IActionResult ViewResources()
+        /*Edit Resource Event Start*/
+        public IActionResult EditResource(int resourceId)
         {
-            return View();
+            var resource = _context.Resources.FirstOrDefault(x => x.Id == resourceId);
+
+            return View(resource);
         }
 
+        [HttpPost]
+        public IActionResult EditResource(Resource resource, string availability, int resourceId)
+        {
+            if (availability == "on")
+            {
+                resource.IsAvailable = true;
+            }
 
-        public IActionResult BookingView()
+            resource.Id = resourceId;
+           
+            _context.Resources.Update(resource);
+            _context.SaveChanges(); 
+            return RedirectToAction("ViewResources");
+        }
+        /*Edit Resource Event End*/
+
+
+
+        /*Delete Resource Event Start*/
+        public IActionResult DeleteResource(int resourceId) 
+        {
+
+            var resource = _context.Resources.FirstOrDefault(x => x.Id == resourceId);
+
+            return View(resource);
+        }
+
+        [HttpPost]
+        [ActionName("DeleteResource")]
+        public IActionResult DeleteResourcePost(int resourceId)
+        {
+            var resource = _context.Resources.FirstOrDefault(x => x.Id == resourceId);
+
+            if (resource != null)
+            {
+                _context.Resources.Remove(resource);
+                _context.SaveChanges();
+            }
+            return RedirectToAction("ViewResources");
+        }
+        /*Delete Resource Event End*/
+
+        
+
+        /*Booking Event Start*/
+        public IActionResult BookingView(int resourceId)
         {
             var resourcesList = _context.Resources.ToList();
             var resourceNames = new List<string>();
 
-            foreach (var item in resourcesList)
+            if (resourceId > 0)
             {
-                resourceNames.Add(item.Name);
+                var resource= _context.Resources.Find(resourceId);
+
+                if (resource != null)
+                {
+                    resourceNames.Add(resource.Name);
+                }
             }
 
+            else
+            {
+
+                foreach (var item in resourcesList)
+                {
+                    resourceNames.Add(item.Name);
+                }
+
+            }
             ViewBag.ResourceNameList=resourceNames;
 
             return View();
@@ -94,7 +153,7 @@ namespace InternalBookingSystem.Controllers
 
             return RedirectToAction("BookingView");
         }
-
+        /*Booking Event End*/
 
 
     }

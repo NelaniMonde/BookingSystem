@@ -1,5 +1,125 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@model List<Resource>
+
+<!--Main Container-->
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-black glassBackground"> Welcome to Resource Page</h2>
+        </div>
+
+        <div class="col-6 text-end">
+            <a asp-controller="Booking" asp-action="AddResource" class="btn text-primary glassBackground" style="height:40px; width:150px; padding-top:7px;"><span>Add Equipment</span></a>
+        </div>
+    </div>
+    <br /> <br />
+
+
+    <!--Main Table-->
+    <!--Overall loans -->
+
+
+
+
+<h6 class="text-black glassBackground">
+    Resource List 
+</h6>
+    <table id="MainTable" class=" text-black table-bordered glassBackground">
+    <thead>
+        <tr>
+            <th>Equipment Name</th>
+            <th>Equipment Description</th>
+            <th>Equipment Location </th>
+            <th>Equipment Capacity</th>
+            <th>Equipment Availabity </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr class="text-black-50">
+                <td>@obj.Name</td>
+                <td> @obj.Description</td>
+                <td>@obj.Location</td>
+                <td> @obj.Capacity</td>
+                @if(obj.IsAvailable==true)
+                {
+                        <td>Available</td>
+                    }
+                    else if(obj.IsAvailable==false)
+                    {
+                       <td>Not Available</td>
+                    }
+                <td>
+                    <div class="w-75 btn-group" role="group">
+                            <a asp-controller="Booking" asp-action="EditResource" asp-route-resourceId="@obj.Id"
+                               class="btn  text-warning mx-2">
+                            Update
+                        </a>
+                            <a asp-controller="Booking" asp-action="DeleteResource" asp-route-resourceId="@obj.Id"
+                               class="btn  text-danger mx-2">
+                            Delete
+                        </a>
+
+                            <a asp-controller="Booking" asp-action="BookingView" asp-route-resourceId="@obj.Id"
+                               class="btn  text-success mx-2">
+                                Book Equipment
+                            </a>
+                       
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>
+
+@section Scripts {
+<script>
+        $(document).ready( function () {
+            $('#MainTable').DataTable();
+
+
+                // $('.dataTables_filter input').addClass('glassBackground');
+    } );
+</script>
 }
+
+
+<style>
+        /**Data Table Styling Start*/
+
+     
+        /* If NOT using Tailwind, use direct inheritance: */
+        .dataTables_filter input {
+            background: rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            border-radius: 15px !important;
+            padding: 6px 10px !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            color: #fff !important;
+        }
+
+        /* Apply the glass style to pagination buttons */
+        .dataTables_paginate .paginate_button {
+            background: rgba(255, 255, 255, 0.2) !important;
+            backdrop-filter: blur(10px) !important;
+            -webkit-backdrop-filter: blur(10px) !important;
+            border-radius: 10px !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            color: white !important;
+            padding: 6px 12px !important;
+            margin: 2px !important;
+        }
+
+            /* Active pagination button */
+            .dataTables_paginate .paginate_button.current {
+                background: rgba(255, 255, 255, 0.35) !important;
+                color: #000 !important;
+                border: 1px solid rgba(255, 255, 255, 0.4) !important;
+            }
+
+        /** Datatable Styling End **/
+</style>
