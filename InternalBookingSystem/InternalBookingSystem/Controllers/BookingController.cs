@@ -111,6 +111,7 @@ namespace InternalBookingSystem.Controllers
         public IActionResult BookingView(int resourceId)
         {
             var resourcesList = _context.Resources.ToList();
+            var bookings = _context.Bookings.ToList();
             var resourceNames = new List<string>();
 
             if (resourceId > 0)
@@ -125,11 +126,17 @@ namespace InternalBookingSystem.Controllers
 
             else
             {
+              
 
-                foreach (var item in resourcesList)
-                {
-                    resourceNames.Add(item.Name);
-                }
+                    foreach (var item in resourcesList)
+                    {
+                        if (item.IsAvailable == true)
+                        {
+
+                            resourceNames.Add(item.Name);
+                        }
+                    }
+                
 
             }
             ViewBag.ResourceNameList=resourceNames;
@@ -137,6 +144,7 @@ namespace InternalBookingSystem.Controllers
             return View();
         }
 
+      
 
         [HttpPost]
         public IActionResult BookingView(Booking booking,string resourceName)
@@ -154,6 +162,25 @@ namespace InternalBookingSystem.Controllers
             return RedirectToAction("BookingView");
         }
         /*Booking Event End*/
+
+
+        /* View Bookings start*/
+        public IActionResult ViewBookings()
+        {
+            var bookings = _context.Bookings.ToList();
+            var resourceNames = new List<Resource>();
+
+            foreach (var item in bookings)
+            {
+                resourceNames.Add(_context.Resources.Find(item.ResourcedId));
+            }
+
+            ViewBag.resources = resourceNames;  
+            
+
+            return View(bookings);
+        }
+        /* View Bookings end*/
 
 
     }

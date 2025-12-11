@@ -1,0 +1,76 @@
+﻿@model List<Booking>
+
+<!--Main Container-->
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-black glassBackground"> Welcome to Resource Page</h2>
+        </div>
+
+        <div class="col-6 text-end">
+            <a asp-controller="Booking" asp-action="AddResource" class="btn text-primary glassBackground" style="height:40px; width:150px; padding-top:7px;"><span>Add Equipment</span></a>
+        </div>
+    </div>
+    <br /> <br />
+
+
+    <!--Main Table-->
+    <!--Overall loans -->
+
+
+
+
+    <h6 class="text-black glassBackground">
+        Resource List
+    </h6>
+    <div class="glassBackground">
+        <table id="MainTable" class=" text-black table">
+            <thead>
+                <tr>
+                    <th>Equipment Name</th>
+                    <th>Start Time</th>
+                    <th>End Time </th>
+                    <th>BookedBy</th>
+                    <th>Purpose</th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var obj in Model)
+                {
+                    <tr class="text-black-50">
+
+                        @foreach (var item in ViewBag.resources)
+                        {
+                            if(item.Id == obj.ResourcedId )
+                            {
+                        <td>@item.Name</td>
+                            }
+                        }
+                        <td> @obj.StartTime</td>
+                        <td>@obj.EndTime</td>
+                        <td> @obj.BookedBy</td>
+                        <td>@obj.Purpose</td>
+                        
+                  
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+            $(document).ready( function () {
+                $('#MainTable').DataTable();
+
+
+                    // $('.dataTables_filter input').addClass('glassBackground');
+        } );
+    </script>
+}
+
+
+

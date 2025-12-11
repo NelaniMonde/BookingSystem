@@ -23,7 +23,8 @@
 <h6 class="text-black glassBackground">
     Resource List 
 </h6>
-    <table id="MainTable" class=" text-black table-bordered glassBackground">
+    <div class="glassBackground">
+        <table id="MainTable" class=" text-black table">
     <thead>
         <tr>
             <th>Equipment Name</th>
@@ -73,6 +74,7 @@
         }
     </tbody>
 </table>
+    </div>
 </div>
 
 @section Scripts {
@@ -87,39 +89,4 @@
 }
 
 
-<style>
-        /**Data Table Styling Start*/
 
-     
-        /* If NOT using Tailwind, use direct inheritance: */
-        .dataTables_filter input {
-            background: rgba(255, 255, 255, 0.2) !important;
-            backdrop-filter: blur(10px) !important;
-            -webkit-backdrop-filter: blur(10px) !important;
-            border-radius: 15px !important;
-            padding: 6px 10px !important;
-            border: 1px solid rgba(255, 255, 255, 0.3) !important;
-            color: #fff !important;
-        }
-
-        /* Apply the glass style to pagination buttons */
-        .dataTables_paginate .paginate_button {
-            background: rgba(255, 255, 255, 0.2) !important;
-            backdrop-filter: blur(10px) !important;
-            -webkit-backdrop-filter: blur(10px) !important;
-            border-radius: 10px !important;
-            border: 1px solid rgba(255, 255, 255, 0.3) !important;
-            color: white !important;
-            padding: 6px 12px !important;
-            margin: 2px !important;
-        }
-
-            /* Active pagination button */
-            .dataTables_paginate .paginate_button.current {
-                background: rgba(255, 255, 255, 0.35) !important;
-                color: #000 !important;
-                border: 1px solid rgba(255, 255, 255, 0.4) !important;
-            }
-
-        /** Datatable Styling End **/
-</style>
