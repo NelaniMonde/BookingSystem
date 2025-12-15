@@ -167,18 +167,36 @@ namespace InternalBookingSystem.Controllers
         /* View Bookings start*/
         public IActionResult ViewBookings()
         {
-            var bookings = _context.Bookings.ToList();
-            var resourceNames = new List<Resource>();
+            //var bookings = _context.Bookings.ToList();
+            //var resourceNames = new List<Resource>();
+            //var resource = _context.Resources.ToList();
+            var jointTable = new List<BookingsAndResources>();
+            var resource = new Resource();
 
-            foreach (var item in bookings)
+            foreach (var item in _context.Bookings.ToList())
             {
-                resourceNames.Add(_context.Resources.Find(item.ResourcedId));
-            }
+                /*resourceNames.Add(_context.Resources.Find(item.ResourcedId))*/;
 
-            ViewBag.resources = resourceNames;  
+
+                foreach (var objRec in _context.Resources.ToList())
+                {
+                    if (item.ResourcedId == objRec.Id)
+                    {
+                        resource = objRec;
+                    }
+                }
+                    jointTable.Add(new BookingsAndResources
+                    {
+                        resource = resource,
+                        bookings = item
+                    });
+              }
             
 
-            return View(bookings);
+            //ViewBag.resources = resourceNames;  
+            
+
+            return View(jointTable);
         }
         /* View Bookings end*/
 

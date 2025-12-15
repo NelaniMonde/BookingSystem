@@ -1,29 +1,27 @@
-﻿@model List<Booking>
+﻿@model List<BookingsAndResources>
 
 <!--Main Container-->
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-black glassBackground"> Welcome to Resource Page</h2>
+            <h2 class="text-black glassBackground"> View Bookings</h2>
         </div>
 
         <div class="col-6 text-end">
-            <a asp-controller="Booking" asp-action="AddResource" class="btn text-primary glassBackground" style="height:40px; width:150px; padding-top:7px;"><span>Add Equipment</span></a>
+            <a asp-controller="Booking" asp-action="BookingView" class="btn text-primary glassBackground" style="height:40px; width:150px; padding-top:7px;"><span>Create Booking</span></a>
         </div>
     </div>
     <br /> <br />
 
 
-    <!--Main Table-->
-    <!--Overall loans -->
 
 
 
 
     <h6 class="text-black glassBackground">
-        Resource List
+        Bookings List
     </h6>
-    <div class="glassBackground">
+    <div class="glassBackground " >
         <table id="MainTable" class=" text-black table">
             <thead>
                 <tr>
@@ -33,28 +31,30 @@
                     <th>BookedBy</th>
                     <th>Purpose</th>
 
-                    <th></th>
+                    
                 </tr>
             </thead>
             <tbody>
-                @foreach (var obj in Model)
+                @foreach (var item in Model)
                 {
-                    <tr class="text-black-50">
-
-                        @foreach (var item in ViewBag.resources)
-                        {
-                            if(item.Id == obj.ResourcedId )
-                            {
-                        <td>@item.Name</td>
-                            }
-                        }
-                        <td> @obj.StartTime</td>
-                        <td>@obj.EndTime</td>
-                        <td> @obj.BookedBy</td>
-                        <td>@obj.Purpose</td>
+                    
                         
+                            <tr class="text-white-70">
+
+                      
+                         
+                                <td>@item.resource.Name</td>
+                                <td> @item.bookings.StartTime</td>
+                                <td>@item.bookings.EndTime</td>
+                                <td> @item.bookings.BookedBy</td>
+                                <td>@item.bookings.Purpose</td>
+                            
+
+   
                   
                     </tr>
+                    
+                   
                 }
             </tbody>
         </table>
