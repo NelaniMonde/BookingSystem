@@ -22,9 +22,11 @@ namespace InternalBookingSystem.Models
         [DataType(DataType.Date)]
         public DateTime EndTime { get; set; }
 
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "No Numbers allowed")]
         [DisplayName("Booked By")]
         public string BookedBy { get; set; }
 
+        [RegularExpression("^[a-zA-Z ]*$", ErrorMessage = "No Numbers allowed")]
         public string Purpose { get; set; }
 
 

@@ -49,7 +49,22 @@ namespace InternalBookingSystem.Controllers
                             }
 
                         }
+
+                         if (DateTime.Now > Convert.ToDateTime(booking.EndTime))
+                        {
+                            resourceItem.IsAvailable = true;
+                            _context.Resources.Update(resourceItem);
+                            _context.SaveChanges();
+                        }
                     }
+                    /* Conditional Statement because deciding an equipment 
+                     * should be available or not, can be  or should up to the admin*/
+                    //else if (resourceItem.Id == booking.ResourcedId)
+                    //{
+                    //    resourceItem.IsAvailable = true;
+                    //    _context.Resources.Update(resourceItem);
+                    //    _context.SaveChanges();
+                    //}
                 }
             }
             

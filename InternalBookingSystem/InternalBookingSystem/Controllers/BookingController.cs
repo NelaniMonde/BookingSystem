@@ -2,6 +2,7 @@
 using InternalBookingSystem.Data;
 using InternalBookingSystem.Models;
 using InternalBookingSystem.UserActivityClasses;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternalBookingSystem.Controllers
@@ -20,6 +21,7 @@ namespace InternalBookingSystem.Controllers
 
 
         /* view resource event start */
+        [Authorize(Roles =SD.Role_User_Admin+", "+SD.Role_User_Manager)]
         public IActionResult ViewResources()
         {
             var equipmentList = _context.Resources.ToList();
@@ -28,8 +30,9 @@ namespace InternalBookingSystem.Controllers
         }
         /* view resource event end */
 
-        
+
         /* Add resource event start */
+        [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
         public IActionResult AddResource()
         {
             return View();
@@ -50,12 +53,18 @@ namespace InternalBookingSystem.Controllers
 
             _context.Resources.Add(resource);   
             _context.SaveChanges();
+
+            //_logger.LogUserActivity(User.Identity.,"Added a resource/equipment: "+resource.Name.ToString()+
+            //    ". With Location: "+resource.Location.ToString()+". Capacity of:  "+resource.Capacity,
+            //    User.Identity.);
+
             return RedirectToAction("AddResource");
         }
         /* Add resource event end */
 
-        
+
         /*Edit Resource Event Start*/
+        [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
         public IActionResult EditResource(int resourceId)
         {
             var resource = _context.Resources.FirstOrDefault(x => x.Id == resourceId);
@@ -82,6 +91,7 @@ namespace InternalBookingSystem.Controllers
 
 
         /*Delete Resource Event Start*/
+        [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
         public IActionResult DeleteResource(int resourceId) 
         {
 
@@ -105,9 +115,10 @@ namespace InternalBookingSystem.Controllers
         }
         /*Delete Resource Event End*/
 
-        
+
 
         /*Booking Event Start*/
+        [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager+", "+SD.Role_User_NormalUser)]
         public IActionResult BookingView(int resourceId)
         {
             var resourcesList = _context.Resources.ToList();
@@ -127,7 +138,6 @@ namespace InternalBookingSystem.Controllers
             else
             {
               
-
                     foreach (var item in resourcesList)
                     {
                         if (item.IsAvailable == true)
@@ -135,8 +145,7 @@ namespace InternalBookingSystem.Controllers
 
                             resourceNames.Add(item.Name);
                         }
-                    }
-                
+                    }  
 
             }
             ViewBag.ResourceNameList=resourceNames;
@@ -165,18 +174,14 @@ namespace InternalBookingSystem.Controllers
 
 
         /* View Bookings start*/
+        [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager + ", " + SD.Role_User_NormalUser)]
         public IActionResult ViewBookings()
         {
-            //var bookings = _context.Bookings.ToList();
-            //var resourceNames = new List<Resource>();
-            //var resource = _context.Resources.ToList();
             var jointTable = new List<BookingsAndResources>();
             var resource = new Resource();
 
             foreach (var item in _context.Bookings.ToList())
             {
-                /*resourceNames.Add(_context.Resources.Find(item.ResourcedId))*/;
-
 
                 foreach (var objRec in _context.Resources.ToList())
                 {
@@ -192,10 +197,6 @@ namespace InternalBookingSystem.Controllers
                     });
               }
             
-
-            //ViewBag.resources = resourceNames;  
-            
-
             return View(jointTable);
         }
         /* View Bookings end*/

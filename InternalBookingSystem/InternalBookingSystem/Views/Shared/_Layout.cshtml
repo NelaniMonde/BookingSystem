@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - InternalBookingSystem</title>
+    <title> Booker</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/InternalBookingSystem.styles.css" asp-append-version="true" />
@@ -16,7 +16,11 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light glassBackground border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">InternalBookingSystem</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+
+                    <img src="~/images/PenBookGlassesPhone.jpg" width="50" height="50" alt="Logo" class="navbar-logo">
+                    Booker
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -27,19 +31,26 @@
                         @* <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="AddResource">Create Resource</a>
                         </li> *@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="BookingView">Book Equipment</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewResources">View Equipment</a>
-                        </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewBookings">View Bookings</a>
-                        </li>
+                @if (User.IsInRole(SD.Role_User_NormalUser) || User.IsInRole(SD.Role_User_Manager) || User.IsInRole(SD.Role_User_Admin))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="BookingView">Book Equipment</a>
+                            </li>
 
-                        
+                            @if (User.IsInRole(SD.Role_User_Manager) || User.IsInRole(SD.Role_User_Admin))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewResources">View Equipment</a>
+                                </li>
+                            }
+                              <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewBookings">View Bookings</a>
+                                </li>
+                            
+
+                        }       
                     </ul>
 
                     <partial name="_LoginPartial" />

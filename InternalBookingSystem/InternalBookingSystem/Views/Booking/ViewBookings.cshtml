@@ -29,29 +29,21 @@
                     <th>Start Time</th>
                     <th>End Time </th>
                     <th>BookedBy</th>
-                    <th>Purpose</th>
-
-                    
+                    <th>Purpose</th> 
                 </tr>
             </thead>
             <tbody>
                 @foreach (var item in Model)
                 {
                     
-                        
-                            <tr class="text-white-70">
+                     <tr class="text-white-70">
 
-                      
-                         
-                                <td>@item.resource.Name</td>
-                                <td> @item.bookings.StartTime</td>
-                                <td>@item.bookings.EndTime</td>
-                                <td> @item.bookings.BookedBy</td>
-                                <td>@item.bookings.Purpose</td>
-                            
+                        <td>@item.resource.Name</td>
+                        <td> @item.bookings.StartTime</td>
+                        <td>@item.bookings.EndTime</td>
+                        <td> @item.bookings.BookedBy</td>
+                        <td>@item.bookings.Purpose</td>
 
-   
-                  
                     </tr>
                     
                    
