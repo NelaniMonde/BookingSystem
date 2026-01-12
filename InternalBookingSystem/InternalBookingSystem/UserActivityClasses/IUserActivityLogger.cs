@@ -2,7 +2,7 @@
 {
     public interface IUserActivityLogger
     {
-        void LogUserActivity(string userId, string action, string name, 
+        void LogUserActivity(string userId, string action, 
             string email);
     }
 }

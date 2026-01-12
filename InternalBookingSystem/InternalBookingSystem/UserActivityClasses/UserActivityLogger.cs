@@ -12,14 +12,14 @@ namespace InternalBookingSystem.UserActivityClasses
             _appContext = appContext;
         }
         public void LogUserActivity(string userImployeeId, string action, 
-            string name, string email)
+            string email)
         {
             var log = new UserActivityLog
             {
                 UserImployeeId = userImployeeId,
                 Action = action,
                 Timestamp = DateTime.UtcNow,
-                EmployeeName = name,
+                
                 EmployeeEmail = email
 
             }; 

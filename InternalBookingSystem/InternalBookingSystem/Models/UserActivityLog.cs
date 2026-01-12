@@ -9,7 +9,7 @@ namespace InternalBookingSystem.Models
         public int Id { get; set; }
         public string UserImployeeId { get; set; }
 
-        public string EmployeeName { get; set; }
+        //public string EmployeeName { get; set; }
 
         public string EmployeeEmail { get; set; }
 

@@ -3,20 +3,24 @@ using InternalBookingSystem.Data;
 using InternalBookingSystem.Models;
 using InternalBookingSystem.UserActivityClasses;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternalBookingSystem.Controllers
 {
     public class BookingController : Controller
     {
+       
         private readonly ApplicationDbContext _context; 
         private readonly IUserActivityLogger _logger;
 
-        public BookingController(ApplicationDbContext _context, IUserActivityLogger _logger)
+        public BookingController(ApplicationDbContext _context, 
+            IUserActivityLogger _logger)
         {
             this._context = _context;
-            this._logger = _logger; 
-            
+            this._logger = _logger;
+        
+
         }
 
 
@@ -35,6 +39,9 @@ namespace InternalBookingSystem.Controllers
         [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
         public IActionResult AddResource()
         {
+            
+
+            
             return View();
         }
 
@@ -44,8 +51,9 @@ namespace InternalBookingSystem.Controllers
             /*so if availability is set to on then set the isAvailable to true
              and if availability is set to null then set it to false
              */
+           
 
-            if(availability=="on")
+            if (availability=="on")
             {
                 resource.IsAvailable = true;    
             }
@@ -54,9 +62,22 @@ namespace InternalBookingSystem.Controllers
             _context.Resources.Add(resource);   
             _context.SaveChanges();
 
-            //_logger.LogUserActivity(User.Identity.,"Added a resource/equipment: "+resource.Name.ToString()+
-            //    ". With Location: "+resource.Location.ToString()+". Capacity of:  "+resource.Capacity,
-            //    User.Identity.);
+            var currentUser = _context.ApplicationUsers.Where(s => s.Email == User.Identity.Name.ToString());
+            string employeeId = "";
+                
+
+            if (currentUser != null)
+            {
+                foreach (var item in currentUser)
+                {
+                    employeeId = item.EmployeeNumber;
+                   
+                }
+            }
+
+            _logger.LogUserActivity(employeeId, "Added a resource/equipment: " + resource.Name.ToString() +
+                ". With Location: " + resource.Location.ToString() + ". Capacity of:  " + resource.Capacity,
+                User.Identity.Name);
 
             return RedirectToAction("AddResource");
         }
