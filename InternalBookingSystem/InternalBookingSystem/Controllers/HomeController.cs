@@ -1,24 +1,35 @@
 using System.Diagnostics;
+using System.Threading.Tasks;
 using InternalBookingSystem.Data;
 using InternalBookingSystem.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace InternalBookingSystem.Controllers
 {
     public class HomeController : Controller
     {
+       // private readonly UserManager<ApplicationUser> _userManager; 
         private readonly ILogger<HomeController> _logger;
 
         private readonly ApplicationDbContext _context; 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext _context)
+        public HomeController(ILogger<HomeController> logger, 
+            ApplicationDbContext _context)
         {
             _logger = logger;
             this._context = _context;
+           
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+          
+
             Switcher();
+
+
+
+           
             return View();
         }
 

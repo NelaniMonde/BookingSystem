@@ -1,0 +1,39 @@
+﻿<!--Success Message-->
+@if (TempData["Success"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+
+        toastr.options= {'positionClass': 'toast-top-center'};
+        toastr.success('@TempData["Success"]');
+
+    </script>
+
+}
+
+<!--Error Message-->
+@if (TempData["Error"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+
+        toastr.options={'positionClass': 'toast-top-center'};
+        toastr.error('@TempData["Error"]');
+
+    </script>
+}
+
+<!--Warning Message (For deleting items)-->
+@if (TempData["Warning"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+
+        toastr.options={'positionClass': 'toast-top-center'};
+        toastr.warning('@TempData["Warning"]');
+
+    </script>
+}

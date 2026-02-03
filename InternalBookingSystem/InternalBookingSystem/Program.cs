@@ -22,7 +22,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
     GetConnectionString("DefaultConnection")));
 
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>().
+    AddDefaultTokenProviders();
+
+//builder.Services.AddIdentity<ApplicationUser,IdentityRole>()
+//    .AddEntityFrameworkStores<ApplicationDbContext>().
+//    AddDefaultTokenProviders();
 
 //Adding razor pages services on the application
 builder.Services.AddRazorPages();
@@ -31,6 +37,13 @@ builder.Services.AddRazorPages();
 builder.Services.AddScoped<IEmailSender, EmailSender>();
 
 builder.Services.AddScoped<IUserActivityLogger, UserActivityLogger>();
+
+////Newly added service
+//builder. Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//           .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
+
 
 
 var app = builder.Build();

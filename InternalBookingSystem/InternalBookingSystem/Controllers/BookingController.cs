@@ -1,4 +1,5 @@
 ﻿
+using Elfie.Serialization;
 using InternalBookingSystem.Data;
 using InternalBookingSystem.Models;
 using InternalBookingSystem.UserActivityClasses;
@@ -37,16 +38,16 @@ namespace InternalBookingSystem.Controllers
 
         /* Add resource event start */
         [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
-        public IActionResult AddResource()
+        public IActionResult AddResource(string message)
         {
-            
 
+            TempData["Success"]=message;
             
             return View();
         }
 
         [HttpPost]
-        public IActionResult AddResource(Resource resource, string availability)
+        public IActionResult AddResource(Models.Resource resource, string availability)
         {
             /*so if availability is set to on then set the isAvailable to true
              and if availability is set to null then set it to false
@@ -79,22 +80,28 @@ namespace InternalBookingSystem.Controllers
                 ". With Location: " + resource.Location.ToString() + ". Capacity of:  " + resource.Capacity,
                 User.Identity.Name);
 
-            return RedirectToAction("AddResource");
+            var successMessage = "A resource/equipment: " + resource.Name.ToString() +
+                ". With Location: " + resource.Location.ToString() + ". Capacity of:  " 
+                + resource.Capacity + " has been added Successfully!!!";
+
+            return RedirectToAction("AddResource", new { message = successMessage});
         }
         /* Add resource event end */
 
 
         /*Edit Resource Event Start*/
         [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
-        public IActionResult EditResource(int resourceId)
+        public IActionResult EditResource(int resourceId, string message)
         {
             var resource = _context.Resources.FirstOrDefault(x => x.Id == resourceId);
+
+            TempData["Success"]=message;
 
             return View(resource);
         }
 
         [HttpPost]
-        public IActionResult EditResource(Resource resource, string availability, int resourceId)
+        public IActionResult EditResource(Models.Resource resource, string availability, int resourceId)
         {
             if (availability == "on")
             {
@@ -104,8 +111,34 @@ namespace InternalBookingSystem.Controllers
             resource.Id = resourceId;
            
             _context.Resources.Update(resource);
-            _context.SaveChanges(); 
-            return RedirectToAction("ViewResources");
+            _context.SaveChanges();
+
+
+            var currentUser = _context.ApplicationUsers.Where(s => s.Email == User.Identity.Name.ToString());
+            string employeeId = "";
+
+
+            if (currentUser != null)
+            {
+                foreach (var item in currentUser)
+                {
+                    employeeId = item.EmployeeNumber;
+
+                }
+            }
+
+
+
+            _logger.LogUserActivity(employeeId, "Edited a resource/equipment: " + resource.Name.ToString() +
+               ". With Location: " + resource.Location.ToString() + ". Capacity of:  " + resource.Capacity,
+               User.Identity.Name);
+
+            var successMessage = "A resource/equipment: " + resource.Name.ToString() +
+                ". With Location: " + resource.Location.ToString() + ". Capacity of:  "
+                + resource.Capacity + " has been Edited Successfully!!!";
+
+
+            return RedirectToAction("ViewResources", new {message =successMessage});
         }
         /*Edit Resource Event End*/
 
@@ -113,11 +146,16 @@ namespace InternalBookingSystem.Controllers
 
         /*Delete Resource Event Start*/
         [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
-        public IActionResult DeleteResource(int resourceId) 
+        public IActionResult DeleteResource(int resourceId, string message) 
         {
 
             var resource = _context.Resources.FirstOrDefault(x => x.Id == resourceId);
-
+           
+            //We are checking to see if the string has anything
+            if (message.Length > 1)
+            {
+                TempData["Warning"] = message;
+            }
             return View(resource);
         }
 
@@ -126,13 +164,37 @@ namespace InternalBookingSystem.Controllers
         public IActionResult DeleteResourcePost(int resourceId)
         {
             var resource = _context.Resources.FirstOrDefault(x => x.Id == resourceId);
-
+            //The obvious you cant assign a null to var variable
+            //why make it a var instead of a string? its a habit at this point 
+            var warningMessage = "";
             if (resource != null)
             {
                 _context.Resources.Remove(resource);
                 _context.SaveChanges();
+
+                var currentUser = _context.ApplicationUsers.Where(s => s.Email == User.Identity.Name.ToString());
+                string employeeId = "";
+
+
+                if (currentUser != null)
+                {
+                    foreach (var item in currentUser)
+                    {
+                        employeeId = item.EmployeeNumber;
+
+                    }
+                }
+
+
+                   _logger.LogUserActivity(employeeId, "Deleted a resource/equipment: " + resource.Name.ToString() +
+                   ". With Location: " + resource.Location.ToString() + ". Capacity of:  " + resource.Capacity,
+                   User.Identity.Name);
+
+                warningMessage = "A resource/equipment: " + resource.Name.ToString() +
+                    ". With Location: " + resource.Location.ToString() + ". Capacity of:  "
+                    + resource.Capacity + " has been deleted Successfully!!!";
             }
-            return RedirectToAction("ViewResources");
+            return RedirectToAction("ViewResources", new {message=warningMessage});
         }
         /*Delete Resource Event End*/
 
@@ -140,8 +202,10 @@ namespace InternalBookingSystem.Controllers
 
         /*Booking Event Start*/
         [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager+", "+SD.Role_User_NormalUser)]
-        public IActionResult BookingView(int resourceId)
+        public IActionResult BookingView(int resourceId, string message)
         {
+            Switcher();
+            
             var resourcesList = _context.Resources.ToList();
             var bookings = _context.Bookings.ToList();
             var resourceNames = new List<string>();
@@ -170,7 +234,7 @@ namespace InternalBookingSystem.Controllers
 
             }
             ViewBag.ResourceNameList=resourceNames;
-
+            TempData["Success"] = message;
             return View();
         }
 
@@ -187,9 +251,32 @@ namespace InternalBookingSystem.Controllers
 
             _context.SaveChanges();
 
-            
 
-            return RedirectToAction("BookingView");
+            var currentUser = _context.ApplicationUsers.Where(s => s.Email == User.Identity.Name.ToString());
+            string employeeId = "";
+
+
+            if (currentUser != null)
+            {
+                foreach (var item in currentUser)
+                {
+                    employeeId = item.EmployeeNumber;
+
+                }
+            }
+
+
+            _logger.LogUserActivity(employeeId, "Created a booking for resource/equipment: " + resourceName +
+            ". With Start Date: " + booking.StartTime + ". End Date:  " + booking.EndTime+
+            ". Booked By: "+booking.BookedBy+". Purpose: "+booking.Purpose,
+            User.Identity.Name);
+
+        var   successMessage = "A booking for resource/equipment: " + resourceName +
+            ". With Start Date: " + booking.StartTime + ". End Date:  " + booking.EndTime +
+            ". Booked By: " + booking.BookedBy + ". Purpose: " + booking.Purpose + " has been created Successfully!!!";
+
+
+            return RedirectToAction("BookingView", new {message=successMessage});
         }
         /*Booking Event End*/
 
@@ -199,7 +286,7 @@ namespace InternalBookingSystem.Controllers
         public IActionResult ViewBookings()
         {
             var jointTable = new List<BookingsAndResources>();
-            var resource = new Resource();
+            var resource = new Models.Resource ();
 
             foreach (var item in _context.Bookings.ToList())
             {
@@ -223,5 +310,57 @@ namespace InternalBookingSystem.Controllers
         /* View Bookings end*/
 
 
+
+
+
+
+
+
+
+        public void Switcher()
+        {
+            var bookingList = _context.Bookings.ToList();
+            var resource = new Models.Resource();
+
+            foreach (var booking in bookingList)
+            {
+                foreach (var resourceItem in _context.Resources.ToList())
+                {
+                    if (resourceItem.Id == booking.ResourcedId)
+                    {
+                        if (DateTime.Now < Convert.ToDateTime(booking.EndTime))
+                        {
+
+                            if (resourceItem != null)
+                            {
+                                resourceItem.IsAvailable = false;
+                                _context.Resources.Update(resourceItem);
+                                _context.SaveChanges();
+
+                                Console.WriteLine(resource.IsAvailable.ToString());
+                            }
+
+                        }
+
+                        if (DateTime.Now > Convert.ToDateTime(booking.EndTime))
+                        {
+                            resourceItem.IsAvailable = true;
+                            _context.Resources.Update(resourceItem);
+                            _context.SaveChanges();
+                        }
+                    }
+                    /* Conditional Statement because deciding an equipment 
+                     * should be available or not, can be  or should up to the admin*/
+                    //else if (resourceItem.Id == booking.ResourcedId)
+                    //{
+                    //    resourceItem.IsAvailable = true;
+                    //    _context.Resources.Update(resourceItem);
+                    //    _context.SaveChanges();
+                    //}
+                }
+            }
+
+
+        }
     }
 }
