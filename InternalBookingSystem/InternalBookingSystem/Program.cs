@@ -17,9 +17,13 @@ builder.Services.AddControllersWithViews();
 //Configuring Razor Pages
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
-//Configuring Data Context Service
+//Configuring Data Context Service (Original)
+//builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.
+//    GetConnectionString("DefaultConnection")));
+
+//For online database 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.
-    GetConnectionString("DefaultConnection")));
+    GetConnectionString("DefaultConnection"), sqlServerOptionsAction=>sqlServerOptionsAction.EnableRetryOnFailure()));
 
 //builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>().AddDefaultTokenProviders();
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
