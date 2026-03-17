@@ -21,7 +21,7 @@
     <h6 class="text-black glassBackground">
         Bookings List
     </h6>
-    <div class="glassBackground " >
+    <div class="glassBackground " style="width:fit-content;" >
         <table id="MainTable" class=" text-black table">
             <thead>
                 <tr>
@@ -56,7 +56,10 @@
 @section Scripts {
     <script>
             $(document).ready( function () {
-                $('#MainTable').DataTable();
+                $('#MainTable').DataTable(
+                {
+                     'responsive':true
+                });
 
 
                     // $('.dataTables_filter input').addClass('glassBackground');

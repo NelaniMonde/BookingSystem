@@ -19,25 +19,50 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light glassBackground border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-lg glassBackground ">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                <a class="navbar-brand text-black" asp-area="" asp-controller="Home" asp-action="Index">
 
                     <img src="~/images/PenBookGlassesPhone.jpg" width="50" height="50" alt="Logo" class="navbar-logo">
                     Booker
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="nav-toggle" id="navToggle">
+                    ☰
                 </button>
+
+                <!--Small device sized nav bar start  (background-color:black;)-->
+                <nav class="nav-menu  glassBackground" style=" z-index:100;" id="navMenu" hidden>
+                    <ul class="navbar-nav me-auto glassBackground">
+                        @if (User.IsInRole(SD.Role_User_NormalUser) || User.IsInRole(SD.Role_User_Manager) || User.IsInRole(SD.Role_User_Admin))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="BookingView">Book Equipment</a>
+                            </li>
+
+                            @if (User.IsInRole(SD.Role_User_Manager) || User.IsInRole(SD.Role_User_Admin))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewResources">View Equipment</a>
+                                </li>
+                            }
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewBookings">View Bookings</a>
+                            </li>
+                        }
+                        <li class="nav-item">
+                        <partial name="_LoginPartial" style="word-wrap:break-word;" />
+                        </li>
+                    </ul>
+
+                    
+                </nav>
+                <!--Small device sized nav bar end-->
+
+
+                <!--Normal screen size nav bar start-->
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        
-                        @* <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="AddResource">Create Resource</a>
-                        </li> *@
-
-
+                       
                 @if (User.IsInRole(SD.Role_User_NormalUser) || User.IsInRole(SD.Role_User_Manager) || User.IsInRole(SD.Role_User_Admin))
                         {
                             <li class="nav-item">
@@ -53,13 +78,13 @@
                               <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewBookings">View Bookings</a>
                                 </li>
-                            
-
                         }       
                     </ul>
 
                     <partial name="_LoginPartial" />
                 </div>
+                <!--Normal screen size nav bar end-->
+
             </div>
         </nav>
     </header>
@@ -71,10 +96,14 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2025 - InternalBookingSystem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2026 - InternalBookingSystem - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
+    <!--Internal jquery start-->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!--Internal jquery end-->
+    
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.datatables.net/2.3.5/js/dataTables.js"></script>

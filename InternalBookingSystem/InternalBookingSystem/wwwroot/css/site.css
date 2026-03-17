@@ -1,8 +1,12 @@
+
+
+
 html {
   font-size: 14px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px)
+{
   html {
     font-size: 16px;
   }
@@ -64,4 +68,113 @@ body {
 }
 /** form alignment and sizing end **/
 
+/* Responsive style formatting start*/
+.nav-menu {
+    display: flex;
+    gap: 1.2rem;
+    margin-right: 10px;
+    width: fit-content;
+}
+
+    .nav-menu a {
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+
+        .nav-menu a:hover {
+            color: #00bfff;
+        }
+
+/* Hamburger (hidden on desktop) */
+.nav-toggle {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+@media(max-width:768px)
+{
+
+/*Nav toggle start */
+    .nav-toggle
+    {
+        display:block;
+    }
+/*Nav toggle end*/
+
+
+    /*Nav editing start*/
+    .nav-menu {
+        position: absolute;
+        top: 60px;
+        left: 10px;
+        width: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        /*  background: #111;*/
+        flex-direction: column;
+        /* align-items: end;*/
+        margin-left: 150px;
+        display: none;
+    }
+
+        .nav-menu a {
+            /* padding: 1rem 0;*/
+            width: 100%;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+    /*Nav editing end*/
+
+     /*Login start*/
+    .leftShift {
+        margin-left: -88px;
+      
+        width:900px;
+    }
+     /*Login and Registration end*/
+
+     /*margin top*/
+     .viewAlignMent
+     {
+         margin-top:60px;
+     }
+     /*margin top*/
+    
+     /*Index view editing start */
+/*    #indexDisplayText h6 {
+        margin-top: 1px;
+        width: fit-content;
+        font-size: 19px;
+    }*/
+
+    #imageContainer img {
+        width: 150px;
+        height: 100px;
+    }
+
+    #imageContainer {
+        margin-left:-150%;
+    }
+    /*Index view editing end */
+
+
+
+
+}
+/* Responsive style formatting end*/
 

@@ -3,8 +3,11 @@
 @{
     ViewData["Title"] = "Register";
 }
+<br />
+<br />
+<br />
 
-<div class="card glassBackground border-0 mt-4">
+<div  class="card glassBackground border-0 mt-4 topMargin">
     <div class="card-header  ml-0 py-4">
         <div class="row">
             <div class="col-12 text-center">
@@ -17,8 +20,8 @@
 <br />
 <br />
 <div class="row">
-    <div class="col-md-8">
-        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" class="glassBackground" style="margin-left:50%" method="post">
+    <div class="col-md-8 leftShift">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" class="glassBackground" style="margin-left:45%" method="post">
             <h2>Create a new account.</h2>
             <hr />
             <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>

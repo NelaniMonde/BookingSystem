@@ -8,7 +8,7 @@
         </div>
 
         <div class="col-6 text-end">
-            <a asp-controller="Booking" asp-action="AddResource" class="btn text-primary glassBackground" style="height:40px; width:150px; padding-top:7px;"><span>Add Equipment</span></a>
+            <a asp-controller="Booking" asp-action="AddResource" class="btn text-black glassBackground" style="height:40px; width:150px; padding-top:7px;"><span>Add Equipment</span></a>
         </div>
     </div>
     <br /> <br />
@@ -23,7 +23,7 @@
 <h6 class="text-black glassBackground">
     Resource List 
 </h6>
-    <div class="glassBackground">
+    <div class="glassBackground" style="width:fit-content;">
         <table id="MainTable" class=" text-black table">
     <thead>
         <tr>
@@ -80,7 +80,10 @@
 @section Scripts {
 <script>
         $(document).ready( function () {
-            $('#MainTable').DataTable();
+            $('#MainTable').DataTable(
+                {
+                         'responsive':true
+                });
 
 
                 // $('.dataTables_filter input').addClass('glassBackground');

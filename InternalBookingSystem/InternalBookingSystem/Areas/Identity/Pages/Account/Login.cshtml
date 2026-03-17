@@ -4,8 +4,10 @@
 @{
     ViewData["Title"] = "Log in";
 }
-
-<div class="card glassBackground border-0 mt-4">
+<br />
+<br/>
+<br />
+<div  class="card glassBackground border-0 mt-4 ">
     <div class="card-header  ml-0 py-4">
         <div class="row">
             <div class="col-12 text-center">
@@ -16,9 +18,9 @@
 </div>
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 leftShift">
         <section>
-            <form id="account" method="post" class="glassBackground" style="margin-left:45%; margin-top:8%">
+            <form id="account" method="post" class="glassBackground " style="margin-left:45%; margin-top:8%">
                 <h2 style="margin-left:6%;">Enter Account Details</h2>
                 <hr />
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
@@ -41,7 +43,7 @@
                 <div>
                     <button id="login-submit" type="submit" class="w-100 text-black-50 btn btn-lg btn-primary glassBackground">Log in</button>
                 </div>
-                <div>
+                <div hidden>
                     <p>
                         <a id="forgot-password" asp-page="./ForgotPassword">Forgot your password?</a>
                     </p>
