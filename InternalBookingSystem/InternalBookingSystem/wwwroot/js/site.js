@@ -9,10 +9,10 @@ var count = 0;
 
 //View variables declarations
 const indexText = document.getElementById("indexDisplayText");
-const loginVar = document.getElementById("LoginID");
-const regiVar = document.getElementById("regID");
-//const dashboardView = document.getElementById("dashBoardView");
-//const showsuspectView = document.getElementById("showsuspectsView");
+const bookingView = document.getElementById("bookingView");
+const viewBookings = document.getElementById("viewBookings");
+const editResource = document.getElementById("editResource");
+const deleteResource = document.getElementById("deleteResource");
 //const updateCriminalRecView = document.getElementById("updateCriminalRec");
 //const viewCasesView = document.getElementById("viewCases");
 //const updateSuspectView = document.getElementById("updateSuspect");
@@ -29,20 +29,21 @@ toggleBtn.addEventListener("click", () => {
     if (indexText != null) {
         indexText.style.marginTop = '210px';
     }
-    if (loginVar != null) {
-        loginVar.style.marginTop = '259px';
+    if (bookingView != null) {
+        bookingView.style.marginTop = '259px';
     }
-    if (regiVar != null) {
-        regiVar.style.marginTop = '259px';
+    if (viewBookings != null) {
+        console.log("view Booking event handling is working");
+        viewBookings.style.marginTop = '259px';
     }
 
-    //if (dashboardView != null) {
-    //    dashboardView.style.marginTop = '259px';
-    //}
+    if (editResource != null) {
+        editResource.style.marginTop = '259px';
+    }
 
-    //if (showsuspectView != null) {
-    //    showsuspectView.style.marginTop = '259px';
-    //}
+    if (deleteResource != null) {
+        deleteResource.style.marginTop = '259px';
+    }
 
     //if (updateCriminalRecView != null) {
     //    updateCriminalRecView.style.marginTop = '259px';
@@ -66,20 +67,20 @@ toggleBtn.addEventListener("click", () => {
             indexText.style.marginTop = "50px";
         }
 
-        if (loginVar != null) {
-            loginVar.style.marginTop = '20px';
+        if (bookingView != null) {
+            bookingView.style.marginTop = '50px';
         }
-        if (regiVar != null) {
-            regiVar.style.marginTop = '20px';
+        if (viewBookings != null) {
+            viewBookings.style.marginTop = '25px';
         }
 
-    //    if (dashboardView != null) {
-    //        dashboardView.style.marginTop = '8%';
-    //    }
+        if (editResource != null) {
+            editResource.style.marginTop = '30px';
+        }
 
-    //    if (showsuspectView != null) {
-    //        showsuspectView.style.marginTop = '8%';
-    //    }
+        if (deleteResource != null) {
+            deleteResource.style.marginTop = '30px';
+        }
 
     //    if (updateCriminalRecView != null) {
     //        updateCriminalRecView.style.marginTop = '12%';

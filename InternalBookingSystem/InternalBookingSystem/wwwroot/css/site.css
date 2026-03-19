@@ -172,9 +172,25 @@ body {
     }
     /*Index view editing end */
 
+    /* horizontal after username start*/
+    .horzontalId
+    {
+        visibility:visible;
+    }
+    /* horizontal after username end*/
 
+    /* form alignment start*/
+    .formAlignment
+    {
+        margin-left: 27px;
+     
+     }
 
-
+            .formSizing
+        {
+          width:300px;
+        }
+    /* form alignment end*/
 }
 /* Responsive style formatting end*/
 

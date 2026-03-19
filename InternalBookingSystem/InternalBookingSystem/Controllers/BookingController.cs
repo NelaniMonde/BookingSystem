@@ -24,7 +24,7 @@ namespace InternalBookingSystem.Controllers
 
         }
 
-
+        /*Remove SD.Role_User_NormalUser after testing*/
         /* view resource event start */
         [Authorize(Roles =SD.Role_User_Admin+", "+SD.Role_User_Manager)]
         public IActionResult ViewResources()
@@ -36,8 +36,9 @@ namespace InternalBookingSystem.Controllers
         /* view resource event end */
 
 
+        /*Remove SD.Role_User_NormalUser after testing*/
         /* Add resource event start */
-        [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
+        [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager )]
         public IActionResult AddResource(string message)
         {
 
@@ -89,6 +90,7 @@ namespace InternalBookingSystem.Controllers
         /* Add resource event end */
 
 
+        /*Remove SD.Role_User_NormalUser after testing*/
         /*Edit Resource Event Start*/
         [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
         public IActionResult EditResource(int resourceId, string message)
@@ -143,18 +145,21 @@ namespace InternalBookingSystem.Controllers
         /*Edit Resource Event End*/
 
 
-
+        /*Remove SD.Role_User_NormalUser after testing*/
         /*Delete Resource Event Start*/
         [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
         public IActionResult DeleteResource(int resourceId, string message) 
         {
 
             var resource = _context.Resources.FirstOrDefault(x => x.Id == resourceId);
-           
+
             //We are checking to see if the string has anything
-            if (message.Length > 1)
+            if (message != null)
             {
-                TempData["Warning"] = message;
+                if (message.Length > 1)
+                {
+                    TempData["Warning"] = message;
+                }
             }
             return View(resource);
         }
