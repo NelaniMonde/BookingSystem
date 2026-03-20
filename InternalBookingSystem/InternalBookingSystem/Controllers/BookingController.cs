@@ -92,7 +92,7 @@ namespace InternalBookingSystem.Controllers
 
         /*Remove SD.Role_User_NormalUser after testing*/
         /*Edit Resource Event Start*/
-        [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
+        [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager )]
         public IActionResult EditResource(int resourceId, string message)
         {
             var resource = _context.Resources.FirstOrDefault(x => x.Id == resourceId);
@@ -147,7 +147,7 @@ namespace InternalBookingSystem.Controllers
 
         /*Remove SD.Role_User_NormalUser after testing*/
         /*Delete Resource Event Start*/
-        [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager)]
+        [Authorize(Roles = SD.Role_User_Admin + ", " + SD.Role_User_Manager )]
         public IActionResult DeleteResource(int resourceId, string message) 
         {
 

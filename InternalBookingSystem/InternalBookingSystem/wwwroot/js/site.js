@@ -13,9 +13,9 @@ const bookingView = document.getElementById("bookingView");
 const viewBookings = document.getElementById("viewBookings");
 const editResource = document.getElementById("editResource");
 const deleteResource = document.getElementById("deleteResource");
-//const updateCriminalRecView = document.getElementById("updateCriminalRec");
-//const viewCasesView = document.getElementById("viewCases");
-//const updateSuspectView = document.getElementById("updateSuspect");
+const addResource = document.getElementById("addResource");
+const viewResources = document.getElementById("viewResources");
+
 
 
 
@@ -33,7 +33,7 @@ toggleBtn.addEventListener("click", () => {
         bookingView.style.marginTop = '259px';
     }
     if (viewBookings != null) {
-        console.log("view Booking event handling is working");
+        
         viewBookings.style.marginTop = '259px';
     }
 
@@ -45,17 +45,15 @@ toggleBtn.addEventListener("click", () => {
         deleteResource.style.marginTop = '259px';
     }
 
-    //if (updateCriminalRecView != null) {
-    //    updateCriminalRecView.style.marginTop = '259px';
-    //}
+    if (addResource != null) {
+        addResource.style.marginTop = '259px';
+    }
 
-    //if (viewCasesView != null) {
-    //    viewCasesView.style.marginTop = '259px';
-    //}
+    if (viewResources != null) {
+        viewResources.style.marginTop = '259px';
+    }
 
-    //if (updateSuspectView != null) {
-    //    updateSuspectView.style.marginTop = '259px';
-    //}
+   
 
     //doing a count for when the nav button is clicked once more
     count += 1;
@@ -82,17 +80,15 @@ toggleBtn.addEventListener("click", () => {
             deleteResource.style.marginTop = '30px';
         }
 
-    //    if (updateCriminalRecView != null) {
-    //        updateCriminalRecView.style.marginTop = '12%';
-    //    }
+        if (addResource != null) {
+            addResource.style.marginTop = '30px';
+        }
 
-    //    if (viewCasesView != null) {
-    //        viewCasesView.style.marginTop = '8%';
-    //    }
+        if (viewResources != null) {
+            viewResources.style.marginTop = '30px';
+        }
 
-    //    if (updateSuspectView != null) {
-    //        updateSuspectView.style.marginTop = '8%';
-    //    }
+    
 
         count = 0;
     }
