@@ -5,8 +5,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script type="text/javascript">
 
+         var screenSize = screen.width;
+
+        if(screenSize <= 768)
+        {
+            toastr.options={'positionClass': 'toast-top-left'};
+            toastr.success('@TempData["Success"]');
+        }
+
+        if(screenSize > 768)
+        {
         toastr.options= {'positionClass': 'toast-top-center'};
         toastr.success('@TempData["Success"]');
+        }
 
     </script>
 
@@ -19,9 +30,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script type="text/javascript">
 
+         var screenSize = screen.width;
+
+         if(screenSize <= 768)
+        {
+            toastr.options={'positionClass': 'toast-top-left'};
+            toastr.error('@TempData["Error"]');
+        }
+
+        if(screenSize > 768)
+        {
         toastr.options={'positionClass': 'toast-top-center'};
         toastr.error('@TempData["Error"]');
-
+        }
     </script>
 }
 
@@ -32,8 +53,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <script type="text/javascript">
 
+         var screenSize = screen.width;
+
+        if(screenSize<= 768)
+        {
+            toastr.options={'positionClass': 'toast-top-left'};
+            toastr.warning('@TempData["Warning"]');
+        }
+
+        if(screenSize > 768)
+        {
         toastr.options={'positionClass': 'toast-top-center'};
         toastr.warning('@TempData["Warning"]');
+        }
 
     </script>
 }
