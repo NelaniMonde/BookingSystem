@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/InternalBookingSystem.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.5/css/dataTables.dataTables.css" />
+    <!--Responsive style-->
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/3.0.6/css/responsive.dataTables.css" />
 
     <link rel="icon" href="/Images/PenBookGlassesPhone.jpg" style="border-radius:50px;" type="image/x-icon">
 
@@ -40,15 +42,15 @@
                             </li>
 
                             @if (User.IsInRole(SD.Role_User_Manager) || User.IsInRole(SD.Role_User_Admin))
-                            {
+                            { 
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewResources">View Equipment</a>
                                 </li>
-                            }
+                            } 
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewBookings">View Bookings</a>
                             </li>
-                        }
+                        } 
                         <li class="nav-item">
                         <partial name="_LoginPartial" style="word-wrap:break-word;" />
                         </li>
@@ -63,22 +65,22 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                        
-                @if (User.IsInRole(SD.Role_User_NormalUser) || User.IsInRole(SD.Role_User_Manager) || User.IsInRole(SD.Role_User_Admin))
-                        {
+               @if (User.IsInRole(SD.Role_User_NormalUser) || User.IsInRole(SD.Role_User_Manager) || User.IsInRole(SD.Role_User_Admin))
+                        { 
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="BookingView">Book Equipment</a>
                             </li>
 
                             @if (User.IsInRole(SD.Role_User_Manager) || User.IsInRole(SD.Role_User_Admin))
-                            {
+                            { 
                                 <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewResources">View Equipment</a>
                                 </li>
-                            }
+                           } 
                               <li class="nav-item">
                                     <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="ViewBookings">View Bookings</a>
                                 </li>
-                        }       
+                         }         
                     </ul>
 
                     <partial name="_LoginPartial" />
@@ -107,6 +109,7 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.datatables.net/2.3.5/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/responsive/3.0.6/js/dataTables.responsive.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
